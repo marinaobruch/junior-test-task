@@ -1,5 +1,19 @@
 # Bazaar test task for junior developers
 
+## From developer (Marina Obruch)
+
+1. Implemented the main functionality as specified
+
+- routing is implemented useState
+- the filter is implemented on the frontend side, as there were problems with the implementation through a request to the server (KORS errors)
+
+2. Areas for improvement
+
+- routing
+- likes on the backend (now stored in LocalStorage)
+- using a library (for example, react-slick) for a more elegant picture carousel
+
+---
 
 ## Installation
 
@@ -9,18 +23,15 @@
 4. Once the command finished, the project should be available at [http://localhost:8000](http://localhost:8000)
 5. (Optional) Run `npm install`, so you can have autocompletion, etc.
 
-
 ## API documentation
 
 The API documentation is available at [http://localhost:8000/swagger](http://localhost:8000/swagger) once the app is up and running. Keep in mind, that every 5 times an API call is made, it throws an error - you should handle the error and display an error message using [react-toastify](https://www.npmjs.com/package/react-toastify) (the library is already inlcuded in the project). Also, API makes a random delay before returning a response, so you have to display a loading animation.
-
 
 ## Good to know
 
 - There're [react-toastify](https://www.npmjs.com/package/react-toastify) and [material-ui](https://mui.com/material-ui/getting-started/) libraries added to the project. You're not obligated to use these, but I really recommend to.
 - Current frontend code is written in JavaScript, but you can use TypeScript.
 - The ads API returns descriptions of ads as html. You don't have to worry about displaying it as html, just render it as a string (so it's totally fine if the ad description of the ad-details component looks like this `Cars rental<br><a href="https://google.com">Link</a>`)
-
 
 ## Goals:
 
@@ -32,7 +43,6 @@ The API documentation is available at [http://localhost:8000/swagger](http://loc
 5. AdDetails should be available at [http://localhost:8000/ads/:id](http://localhost:8000/ads/:id)
 6. `nx lint frontend` should not return eny erorrs.
 7. Once the app is ready, submit a PR to the main branch of **YOUR** repository and message to your contact from our team.
-
 
 ### AdsList component
 
@@ -57,7 +67,7 @@ Layout of the component looks like this
 ```
 
 - Assume that the minimal supported screen width is 520px, so the minimum row width is 2 ad cards + 20px gap.
-- Filters should open in a dialog-like component and should include: min price, max price, city, district and *Contains* (this filter should be sent as the query param `search`).
+- Filters should open in a dialog-like component and should include: min price, max price, city, district and _Contains_ (this filter should be sent as the query param `search`).
 - As it already was mentioned before, every ad-card has static width of 250px and should render an ad thumbnail and the title. The UI layout:
 
 ```
@@ -67,9 +77,8 @@ Layout of the component looks like this
 [city][all available space, but not less than 20px][price]
 ```
 
-- A city name/a title should be displayed in one line. If there's not enough space to fit the city name/title, display it like this: `A long title that didn't fit to this small spa...`. 
+- A city name/a title should be displayed in one line. If there's not enough space to fit the city name/title, display it like this: `A long title that didn't fit to this small spa...`.
 - Click on an ad should redirect to the ad page, click on the like button should add the ad to the list of liked ads (store the list in localStorage) and SHOULD NOT cause the redirect to the ad page. If a user liked an ad, display the button in a different color.
-
 
 ### AdDetails component
 
@@ -86,8 +95,6 @@ all free screen height
 
 Quite simple, isn't it?
 
-
 ## Limitations
 
-The source code of the FE application is located at `apps/frontend/src`. You're allowed to change files *ONLY INSIDE THIS DIRECTORY* (thus you can't install any new libraries). The only file you can change outside of this folder is `apps/frontend/.eslintrc.json` and only in order to enable TypeScript set of rules.
-
+The source code of the FE application is located at `apps/frontend/src`. You're allowed to change files _ONLY INSIDE THIS DIRECTORY_ (thus you can't install any new libraries). The only file you can change outside of this folder is `apps/frontend/.eslintrc.json` and only in order to enable TypeScript set of rules.
